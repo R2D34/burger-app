@@ -4,14 +4,41 @@ import Button from "../../../components/UI/Button/Button";
 import classes from "./ContactData.module.css";
 import axios from "../../../axios-orders";
 import Spinner from "../../../components/UI/Spinner/Spinner";
+import Input from "../../../components/UI/Input/Input";
 
 class ContactData extends Component {
   state = {
-    name: "",
-    email: "",
-    address: {
-      street: "",
-      postalCode: "",
+    orderForm: {
+      name: {
+        elementType: "input",
+        elementConfig: { type: "text", placeholder: "Your name",},
+        value: "",
+      },
+      street: {
+        elementType: "input",
+        elementConfig: { type: "text", placeholder: "Street",},
+        value: "",
+      },
+      zipCode: {
+        elementType: "input",
+        elementConfig: { type: "text", placeholder: "zipCode",},
+        value: "",
+      },
+      country: {
+        elementType: "input",
+        elementConfig: { type: "text", placeholder: "Country",},
+        value: "",
+      },
+      email: {
+        elementType: "input",
+        elementConfig: { type: "text", placeholder: "Email",},
+        value: "",
+      },
+      deliveryMethod: {
+        elementType: "select",
+        elementConfig: { options:[{value: 'fastest', displayValue: 'fastest'}, {value: 'cheapest', displayValue:'cheapest'}]},
+        value: "",
+      },
     },
     loading: false,
   };
@@ -23,15 +50,6 @@ class ContactData extends Component {
     const order = {
       ingredients: this.props.ingredients,
       price: this.props.price,
-      customer: {
-        name: "Son Goku",
-        address: {
-          street: "Golden Valley 2",
-          zipCode: "12-2111",
-          country: "Japn",
-        },
-        email: "testing@testicles.com",
-      },
     };
     axios
       .post("/orders.json", order)
@@ -47,26 +65,22 @@ class ContactData extends Component {
   render() {
     let form = (
       <form>
-        <input
-          className={classes.Input}
-          type="text"
-          name="name"
-          placeholder="Your name"
+        <Input elementType="..." elementConfig="..." value="..."
         />
-        <input
-          className={classes.Input}
+        <Input
+          inputtype="input"
           type="email"
           name="email"
           placeholder="Your email"
         />
-        <input
-          className={classes.Input}
+        <Input
+          inputtype="input"
           type="text"
           name="street"
           placeholder="Street"
         />
-        <input
-          className={classes.Input}
+        <Input
+          inputtype="input"
           type="text"
           name="postal"
           placeholder="Postal Code"
