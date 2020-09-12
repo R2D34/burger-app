@@ -26,16 +26,16 @@ class BurgerBuilder extends Component {
     error: false,
   };
 
-  componentDidMount() {
-    axios
-      .get("https://reacto-burrrrgerro.firebaseio.com/ingredients.json")
-      .then((response) => {
-        this.setState({ ingredients: response.data });
-      })
-      .catch((error) => {
-        this.setState({ error: true });
-      });
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get("https://reacto-burrrrgerro.firebaseio.com/ingredients.json")
+  //     .then((response) => {
+  //       this.setState({ ingredients: response.data });
+  //     })
+  //     .catch((error) => {
+  //       this.setState({ error: true });
+  //     });
+  // }
 
   updatePurchaseState(ingredients) {
     const sum = Object.keys(ingredients)
@@ -92,7 +92,6 @@ class BurgerBuilder extends Component {
 
   purchaseContinueHandler = () => {
     // // alert("You continue!");
-    
 
     const queryParams = [];
 
@@ -104,7 +103,7 @@ class BurgerBuilder extends Component {
       );
     }
 
-    queryParams.push('price=' + this.state.totalPrice)
+    queryParams.push("price=" + this.state.totalPrice);
     const queryString = queryParams.join("&");
     this.props.history.push({
       pathname: "/checkout",
