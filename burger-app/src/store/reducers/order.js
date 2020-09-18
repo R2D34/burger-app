@@ -38,6 +38,7 @@ const fetchOrdersFail = (state, action) => {
 const purchaseBurgerFail = (state, aciton) => {
   return updateObject(state, { loading: false });
 };
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.PURCHASE_INIT:
