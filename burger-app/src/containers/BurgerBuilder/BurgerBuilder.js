@@ -13,7 +13,7 @@ import axios from "../../axios-orders";
 
 import * as actions from "../../store/actions/index";
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
   state = {
     purchasing: false,
   };
@@ -38,7 +38,7 @@ class BurgerBuilder extends Component {
     if (this.props.isAuthenticated) {
       this.setState({ purchasing: true });
     } else {
-      this.props.onSetRedirectPath('/checkout');
+      this.props.onSetRedirectPath("/checkout");
       this.props.history.push("/auth");
     }
   };
