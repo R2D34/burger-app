@@ -10,4 +10,4 @@
 - Rendering differnt content on different routes (it's single page app)
 - Simple tests with enzyme and jest
 - forms and front-end input validation
--
+
