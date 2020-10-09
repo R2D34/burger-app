@@ -1,5 +1,6 @@
 # ReactJS and Firebase WebApp - BurgerMaker
 
+[Screenshot from the mainpage](https://github.com/Tsubanee/burger-app/blob/master/Main-page.png)
 ## App which allows to create a burger and then order through the simple interface.
 
 ### List of the important feautures implemented in the app
