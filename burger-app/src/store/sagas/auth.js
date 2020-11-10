@@ -33,9 +33,7 @@ yield put(actions.authStart());
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + process.env.REACT_APP_FIREBASE_API_KEY;
     }
     try {
-      const response = yield axios.post(url, authData)
-    axios
-      .post(url, authData)
+      const response = yield axios.post(url, authData);
  
 
         const expirationDate = yield new Date(

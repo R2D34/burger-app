@@ -1,6 +1,5 @@
 import * as actionTypes from "./actionsTypes";
 
-import axios from "axios";
 
 export const authStart = () => {
   return {
@@ -44,7 +43,12 @@ export const checkAuthTimeout = (expirationTime) => {
 };
 
 export const auth = (email, password, isSignup) => {
-  return (dispatch) => {
+  return {
+    type: actionTypes.AUTH_USER,
+    email: email,
+    password: password,
+    isSignup: isSignup,
+  }
     
 };
 
