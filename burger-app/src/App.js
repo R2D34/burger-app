@@ -33,7 +33,7 @@ const App = (props) => {
     </Switch>
   );
 
-  if (this.props.isAuthenticated) {
+  if (props.isAuthenticated) {
     routes = (
       <Switch>
         <Route path="/checkout" component={asyncCheckout} />
