@@ -6,7 +6,7 @@ import classes from "./ContactData.module.css";
 import axios from "../../../axios-orders";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Input from "../../../components/UI/Input/Input";
-import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler";
+import WithErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler";
 
 import { updateObject, checkValidity } from "../../../shared/utility";
 
@@ -175,4 +175,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withErrorHandler(ContactData, axios));
+)(WithErrorHandler(ContactData, axios));
