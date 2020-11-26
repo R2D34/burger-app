@@ -19,9 +19,14 @@ export default (httpClient) => {
   useEffect(() => {
     return () => {
       httpClient.interceptors.request.eject(reqInterceptor);
-      httpClient.interceptors.request.eject(resInterceptor);
+      httpClient.interceptors.response.eject(resInterceptor);
     };
-  }, [resInterceptor, reqInterceptor]);
+  }, [
+    resInterceptor,
+    reqInterceptor,
+    httpClient.interceptors.request,
+    httpClient.interceptors.response,
+  ]);
 
   const errorConfirmedHandler = () => {
     setError(null);
