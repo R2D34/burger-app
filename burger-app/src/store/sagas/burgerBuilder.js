@@ -1,12 +1,12 @@
 import { put } from "redux-saga/effects";
 
 import * as actions from "../actions/index";
-import axios from "axios";
+import axios from "../../axios-orders"
 
 export function* initIngredientsSaga(action) {
   try {
     const response = yield axios.get(
-      "https://reacto-burrrrgerro.firebaseio.com/ingredients.json"
+      "ingredients.json"
     );
     yield put(actions.setIngredients(response.data));
   } catch (error) {
